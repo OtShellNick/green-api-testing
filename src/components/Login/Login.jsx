@@ -1,11 +1,12 @@
 import React from 'react';
 import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
 
 import './Login.scss';
-import { useAuth } from '@helpers/useAuth';
+import { login } from '@store/authStore';
 
 const Login = () => {
-    const [_, setAuthorization] = useAuth();
+    const dispatch = useDispatch();
 
     const formik = useFormik({
         initialValues: {
@@ -13,7 +14,7 @@ const Login = () => {
             apiTokenInstance: '',
         },
         onSubmit: values => {
-            setAuthorization(values);
+            dispatch(login(values))
         },
     });
 

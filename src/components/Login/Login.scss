@@ -1,11 +1,4 @@
 .login {
-    display: grid;
-    grid-template-rows: 30vh 70vh;
-    position: relative;
-
-    &__top {
-        background-color: var(--background-green);
-    }
 
     &__form {
         display: flex;
@@ -40,15 +33,6 @@
             &:hover {
                 background-color: var(--background-green-darken);
             }
-        }
-
-        &_wrapper {
-            position: absolute;
-            top: 25vh;
-            left: 40vw;
-            background-color: #fff;
-            border-radius: 3px;
-            box-shadow: 0 17px 50px 0 rgba(11,20,26,.19), 0 12px 15px 0 rgba(11,20,26,.24);
         }
     }
 }
