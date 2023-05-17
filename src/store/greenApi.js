@@ -8,7 +8,14 @@ export const greenApi = createApi({
         getChatsList: builder.query({
             query: ({ idInstance, apiTokenInstance }) => `waInstance${idInstance}/getChats/${apiTokenInstance}`,
         }),
+        getContactInfo: builder.query({
+            query: ({ idInstance, apiTokenInstance, chatId }) => ({
+                url: `waInstance${idInstance}/GetContactInfo/${apiTokenInstance}`,
+                method: 'POST',
+                body: { chatId },
+            })
+        })
     }),
 });
 
-export const { useGetChatsListQuery } = greenApi;
+export const { useGetChatsListQuery, useGetContactInfoQuery } = greenApi;

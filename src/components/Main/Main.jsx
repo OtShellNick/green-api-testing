@@ -15,7 +15,7 @@ const Main = () => {
     console.log(data);
 
     return <div className='main'>
-        <Contacts />
+        <Contacts contacts={data} />
         <Chat />
     </div>
 };

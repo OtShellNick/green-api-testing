@@ -1,0 +1,28 @@
+.contacts {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        height: 72px;
+        padding: 15px;
+        display: flex;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-hover-border);
+        }
+
+        &_avatar {
+            border-radius: 50%;
+            height: 100%;
+        }
+
+        &_name {
+            font-weight: 600;
+            padding: 5px;
+            height: 100%;
+            width: 100%;
+            border-bottom: 1px solid var(--color-hover-border);
+        }
+    }
+}
