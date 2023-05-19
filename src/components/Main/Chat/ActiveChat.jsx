@@ -8,17 +8,20 @@ import IconDefault from '@assets/default.svg?jsx';
 
 const ActiveChat = () => {
     const bottom = useRef(null);
+    const prevNotify = useRef(null);
     const { auth } = useSelector(({ auth }) => auth);
     const { chatId } = useSelector(({ chat }) => chat);
     const { data: messages, refetch } = useGetChatHistoryQuery({ ...auth, chatId });
     const { data: user } = useGetContactInfoQuery({ ...auth, chatId });
-    const { data: notification } = useGetNotificationQuery(auth, { pollingInterval: 5000 });
+    const { data: notification } = useGetNotificationQuery(auth, { pollingInterval: 3000 });
 
     useEffect(() => {
-        if (notification) refetch();
-    }, [notification]);
+        prevNotify.current = notification;
+    });
 
-    useDeleteNotificationQuery({ ...auth, receiptId: notification?.receiptId || null }, { skip: !notification });
+    if (prevNotify.current?.receiptId !== notification?.receiptId) refetch();
+
+    useDeleteNotificationQuery({ ...auth, receiptId: notification?.receiptId }, { skip: !notification });
 
     useEffect(() => {
         if (bottom) bottom.current.scrollIntoView({ behavior: "smooth" });
@@ -36,7 +39,7 @@ const ActiveChat = () => {
         <div className="chat__active_content">
             <ul>
                 {messages && messages.map(message => {
-                    return <li key={message.idMessage}>{message.textMessage}</li>
+                    return <li key={message.idMessage} style={{ textAlign: message.type === 'incoming' ? 'end' : 'initial', padding: '5px 0' }}>{message.textMessage}</li>
                 })}
                 <li style={{ height: 1 }} ref={bottom} />
             </ul>

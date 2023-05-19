@@ -7,6 +7,7 @@
     "watch:dev": "cross-env NODE_ENV=development webpack-dev-server --mode development",
     "watch:prod": "cross-env NODE_ENV=production webpack-dev-server --mode development",
     "prod": "cross-env NODE_ENV=production webpack",
+    "push": "npm run prod&& node gh-pages.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/OtShellNick/green-api-testing/issues"
   },
-  "homepage": "https://github.com/OtShellNick/green-api-testing#readme",
+  "homepage": "https://otshellnick.github.io/green-api-testing/",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/polyfill": "^7.12.1",
@@ -42,6 +43,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "formik": "^2.2.9",
+    "gh-pages": "^5.0.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

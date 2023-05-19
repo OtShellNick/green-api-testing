@@ -38,6 +38,11 @@
             height: 100%;
             overflow: auto;
             background-color: aliceblue;
+
+            & ul {
+                max-height: 619px;
+                padding: 0 5px;
+            }
         }
 
         &_form {

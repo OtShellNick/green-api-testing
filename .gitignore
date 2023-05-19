@@ -39,5 +39,6 @@ sketch
 package-lock.json
 yarn.lock
 .vscode
-
+gh-pages.js
+build
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,react

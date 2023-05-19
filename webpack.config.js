@@ -83,7 +83,7 @@ module.exports = {
     entry: ['@babel/polyfill', path.resolve(__dirname, './src/index.jsx')],
     output: {
         path: path.resolve(__dirname, './build'),
-        publicPath: '/',
+        publicPath: '',
         pathinfo: true,
         filename: '[name].[fullhash].js',
         chunkFilename: '[name].[id].[fullhash].js',

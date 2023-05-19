@@ -24,7 +24,8 @@ export const greenApi = createApi({
             transformResponse: data => {
                 console.log('transform', data)
                 return data.reverse();
-            }
+            },
+            keepUnusedDataFor: 3
         }),
         sendMessage: builder.query({
             query: ({ idInstance, apiTokenInstance, chatId, message }) => ({
