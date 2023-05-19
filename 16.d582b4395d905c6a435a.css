@@ -1,0 +1,4 @@
+/*!**************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Login/Login.scss ***!
+  \**************************************************************************************************************************/
+.login__form{display:flex;flex-direction:column;padding:15px}.login__form input{margin-bottom:10px;border:none;border-radius:8px;background-color:var(--background-white);padding:10px;color:var(--text-color)}.login__form input:focus{outline:none}.login__form input::placeholder{color:var(--text-placeholder-color)}.login__form_button{padding:10px;border-radius:8px;background-color:var(--background-green);border:none;cursor:pointer;transition:all .2s linear}.login__form_button:hover{background-color:var(--background-green-darken)}
