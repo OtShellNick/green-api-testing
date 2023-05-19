@@ -15,7 +15,6 @@ const ActiveChat = () => {
     const { data: notification } = useGetNotificationQuery(auth, { pollingInterval: 5000 });
 
     useEffect(() => {
-        console.log('nn', notification)
         if (notification) refetch();
     }, [notification]);
 
