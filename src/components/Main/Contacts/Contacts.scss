@@ -15,6 +15,11 @@
         &_avatar {
             border-radius: 50%;
             height: 100%;
+
+            &-default {
+                width: 100px;
+                height: 72px;
+            }
         }
 
         &_name {
@@ -23,6 +28,30 @@
             height: 100%;
             width: 100%;
             border-bottom: 1px solid var(--color-hover-border);
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5px;
+        
+        & input {
+            border: none;
+            border-radius: 8px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            color: var(--text-color);
+            width: 90%;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                color: var(--text-placeholder-color);
+            }
         }
     }
 }

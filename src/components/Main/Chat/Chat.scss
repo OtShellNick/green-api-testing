@@ -1,3 +1,82 @@
 .chat {
     background-color: var(--chat-background-color);
+
+    &__not-active {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__active {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 50px 71vh 50px;
+
+        &_header {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+
+            & .contacts__item_name {
+                display: flex;
+                align-items: center;
+            }
+
+            & .contacts__item_avatar-default {
+                width: 40px;
+                height: 40px;
+            }
+
+            & .contacts__item_avatar {
+                height: 40px;
+            }
+        }
+
+        &_content {
+            height: 100%;
+            overflow: auto;
+            background-color: aliceblue;
+        }
+
+        &_form {
+            
+            & form {
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+                }
+
+            & input {
+                border: none;
+                border-radius: 8px;
+                background-color: #ffffff;
+                padding: 10px;
+                color: var(--text-color);
+                width: 95%;
+    
+                &:focus {
+                    outline: none;
+                }
+    
+                &::placeholder {
+                    color: var(--text-placeholder-color);
+                }
+            }
+
+            &_button {
+                padding: 10px;
+                border-radius: 8px;
+                background-color: var(--background-green);
+                border: none;
+                cursor: pointer;
+                transition: all .2s linear;
+    
+                &:hover {
+                    background-color: var(--background-green-darken);
+                }
+            }
+        }
+    }
 }

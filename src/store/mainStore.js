@@ -3,11 +3,13 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 
 import authReducer from './authStore';
 import { greenApi } from './greenApi';
+import chatReducer from './chatStore';
 
 export const store = configureStore({
     reducer: {
         auth: authReducer,
-        [greenApi.reducerPath]: greenApi.reducer
+        [greenApi.reducerPath]: greenApi.reducer,
+        chat: chatReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(greenApi.middleware),

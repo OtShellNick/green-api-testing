@@ -12,8 +12,6 @@ const Main = () => {
     const { auth } = useSelector(({ auth }) => auth);
     const { data } = useGetChatsListQuery(auth);
 
-    console.log(data);
-
     return <div className='main'>
         <Contacts contacts={data} />
         <Chat />
